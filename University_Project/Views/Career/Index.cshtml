@@ -1,0 +1,59 @@
+@model IEnumerable<University_Project.Models.Career>
+
+@{
+    ViewData["Title"] = "Careers";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+
+<div class="container mx-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Carreras</h2>
+        <a class="btn btn-primary" asp-action="Create"><i class="fa-solid fa-plus"></i> Agregar</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover rounded">
+            <thead class="table-info">
+                <tr>
+                    <th>Nombre de la Carrera</th>
+                    <th>Estado</th>
+                    <th>Fecha de Creación</th>
+                    <th>Creado Por</th>
+                    <th>Última Edición</th>
+                    <th>Editado Por</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.CareerName)</td>
+                        <td>
+                            @if (item.IsActive)
+                            {
+                                <span class="badge bg-success"><i class="fa-solid fa-circle-check"></i></span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger"><i class="fa-solid fa-circle-xmark"></i></span>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.Created)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CreatedBy)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Edited)</td>
+                        <td>@Html.DisplayFor(modelItem => item.EditedBy)</td>
+                        <td class="text-center">
+                            <a class="btn btn-sm btn-outline-warning" asp-action="Edit" asp-route-id="@item.CareerId"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a class="btn btn-sm btn-outline-info" asp-action="Details" asp-route-id="@item.CareerId"><i class="fa-solid fa-circle-info"></i></a>
+                            <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@item.CareerId"><i class="fa-solid fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>

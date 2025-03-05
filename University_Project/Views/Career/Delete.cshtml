@@ -1,0 +1,40 @@
+@model University_Project.Models.Career
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>¿Estás seguro de que deseas eliminar esta carrera?</h3>
+
+<div class="mt-4">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Nombre de la carrera</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.CareerName)</dd>
+
+        <dt class="col-sm-3">Activo</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.IsActive)</dd>
+
+        <dt class="col-sm-3">Fecha de creación</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Created)</dd>
+
+        <dt class="col-sm-3">Creado por</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.CreatedBy)</dd>
+
+        <dt class="col-sm-3">Fecha de edición</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Edited)</dd>
+
+        <dt class="col-sm-3">Editado por</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.EditedBy)</dd>
+    </dl>
+
+    <form asp-action="Delete" class="mt-4">
+        <input type="hidden" asp-for="CareerId" />
+        <div class="d-flex justify-content-start">
+            <input type="submit" value="Eliminar" class="btn btn-danger me-2" />
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>

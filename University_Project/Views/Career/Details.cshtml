@@ -1,0 +1,35 @@
+@model University_Project.Models.Career
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h2>Detalles de la carrera</h2>
+
+<div class="mt-4">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Nombre de la carrera</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.CareerName)</dd>
+
+        <dt class="col-sm-3">Activo</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.IsActive)</dd>
+
+        <dt class="col-sm-3">Fecha de creación</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Created)</dd>
+
+        <dt class="col-sm-3">Creado por</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.CreatedBy)</dd>
+
+        <dt class="col-sm-3">Fecha de edición</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Edited)</dd>
+
+        <dt class="col-sm-3">Editado por</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.EditedBy)</dd>
+    </dl>
+
+    <div class="d-flex justify-content-start mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.CareerId" class="btn btn-primary me-2">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Regresar</a>
+    </div>
+</div>
