@@ -9,4 +9,8 @@
 
 Aquí puedes ver un video que muestra cómo funciona la aplicación en acción:
 
-https://github.com/user-attachments/assets/7d414626-2f23-4500-81fa-5c205c99c13d
+
+
+
+https://github.com/user-attachments/assets/a3404f38-ee17-4ddb-8c14-ce2f890b3b00
+
